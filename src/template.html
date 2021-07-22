@@ -1,127 +1,267 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/history.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 </head>
 
 <body>
-    <h2>履&emsp;歴&emsp;書</h2>
-    <div class="section">
-        <div style="display: grid; grid-template-columns: auto 40mm;">
-            <div>
-                <div id="name" class="infoblock">
-                    <div class="furigana keyvaluepair dashed-border">
-                        <div class="label"><span class="small">ふりがな</span></div>
-                        <div class="content"><span id="content-name-kana" class="small"></span></div>
+    <div class="page">
+        <div class="section">
+            <div id="title">
+                <h2>履&emsp;歴&emsp;書</h2>
+                <span id="content-date" class="small"></span>
+            </div>
+            <div style="display: grid; grid-template-columns: auto var(--picture-width);">
+                <div id="basicinfo">
+                    <div id="name" style="border: var(--bold-line); border-bottom: none;">
+                        <div class="furigana keyvaluepair dashed-border">
+                            <div class="label"><span class="small">ふりがな</span></div>
+                            <div class="content"><span id="content-name-kana" class="small"></span></div>
+                        </div>
+                        <div style="line-height: 15mm;" class="keyvaluepair solid-border">
+                            <div class="label"><span class="small">氏名</span></div>
+                            <div class="content">
+                                <span id="content-name-kanji" class="large"></span>
+                            </div>
+                        </div>
                     </div>
-                    <div style="line-height: 15mm;" class="keyvaluepair solid-border">
-                        <div class="label"><span class="small">氏名</span></div>
-                        <div class="content">
-                            <span id="content-name-kanji" class="large"></span>
+                    <div id="birthday-gender"
+                        style="border: var(--bold-line); border-bottom: none; border-top: none; display: grid;">
+                        <div id="birthday" class="keyvaluepair solid-border solid-border-right">
+                            <div class="label"><span class="small">生年月日</span></div>
+                            <div class="content">
+                                <span id="content-birthday-year" class="middle"></span>
+                                <span class="small">年</span>
+                                <span id="content-birthday-month" class="middle"></span>
+                                <span class="small">月</span>
+                                <span id="content-birthday-day" class="middle"></span>
+                                <span class="small">日 生</span>
+                                <span class="small">（満</span>
+                                <span id="content-age" class="middle"></span>
+                                <span class="small">歳）</span>
+                            </div>
+                        </div>
+                        <div id="gender" class="keyvaluepair solid-border">
+                            <div class="label"><span class="small">性別</span></div>
+                            <div><span id="content-gender" class="middle"></span></div>
                         </div>
                     </div>
                 </div>
-                <div id="birthday-gender" class="infoblock">
-                    <div id="birthday" class="keyvaluepair solid-border solid-border-right">
-                        <div class="label"><span class="small">生年月日</span></div>
-                        <div class="content">
-                            <span id="content-birthday-year" class="middle"></span>
-                            <span class="small">年</span>
-                            <span id="content-birthday-month" class="middle"></span>
-                            <span class="small">月</span>
-                            <span id="content-birthday-day" class="middle"></span>
-                            <span class="small">日</span>
-                            <span class="small">（満</span>
-                            <span id="content-age" class="middle"></span>
-                            <span class="small">歳）</span>
+                <div id="picture"><img id="content-picture" src=""></div>
+            </div>
+
+            <div id="address" style="border: var(--bold-line); border-top: none; border-bottom: none;">
+                <div class="furigana keyvaluepair dashed-border">
+                    <div class="label"><span class="small">ふりがな</span></div>
+                    <div class="content">
+                        <span id="content-address-kana" class="small"></span>
+                    </div>
+                </div>
+                <div style="line-height: 10mm;" class="keyvaluepair solid-border">
+                    <div class="label"><span class="small">現住所</span></div>
+                    <div class="content">
+                        <div>
+                            <span class="small">〒 </span>
+                            <span id="content-address-post" class="small"></span>
+                        </div>
+                        <div>
+                            <span id="content-address-kanji" class="middle"></span>
                         </div>
                     </div>
-                    <div id="gender" class="keyvaluepair solid-border">
-                        <div class="label"><span class="small">性別</span></div>
-                        <div class="content"><span id="content-gender" class="middle"></span></div>
+                </div>
+            </div>
+            <div id="sns" style="border: var(--bold-line); border-top: none;">
+                <div class="keyvaluepair">
+                    <div class="label">
+                        <i class="fas fa-envelope"></i>
+                        <span class="small">Email</span>
+                    </div>
+                    <div class="content">
+                        <span class="small">
+                            <code id="content-email"></code>
+                        </span>
+                    </div>
+                </div>
+                <div class="keyvaluepair">
+                    <div class="label">
+                        <i class="fas fa-phone"></i>
+                        <span class="small">携帯電話</span>
+                    </div>
+                    <div class="content">
+                        <span class="small">
+                            <code id="content-phone"></code>
+                        </span>
+                    </div>
+                </div>
+                <div id="github" class="keyvaluepair">
+                    <div class="label">
+                        <i class="fab fa-github"></i>
+                        <span class="small">GitHub</span>
+                    </div>
+                    <div class="content"><span class="small">
+                            <a id="content-github" href="" target="_blank">
+                                <code>@</code><code id="content-github-id"></code>
+                                <span>&nbsp;</span><i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </span></div>
+                </div>
+                <div id="twitter" class="keyvaluepair">
+                    <div class="label">
+                        <i class="fab fa-twitter"></i>
+                        <span class="small">Twitter</span>
+                    </div>
+                    <div class="content">
+                        <span class="small">
+                            <a id="content-twitter" href="" target="_blank">
+                                <code>@</code><code id="content-twitter-id"></code>
+                                <span>&nbsp;</span><i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div id="facebook" class="keyvaluepair">
+                    <div class="label">
+                        <i class="fab fa-facebook"></i>
+                        <span class="small">Facebook</span>
+                    </div>
+                    <div class="content">
+                        <span class="small">
+                            <a id="content-facebook" href="" target="_blank">
+                                <code>@</code><code id="content-facebook-id"></code>
+                                <span>&nbsp;</span><i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </span>
                     </div>
                 </div>
             </div>
-            <div id="picture"><img id="content-picture" src=""></div>
         </div>
 
-        <div id="address" class="infoblock">
-            <div class="furigana keyvaluepair dashed-border">
-                <div class="label"><span class="small">ふりがな</span></div>
-                <div class="content"><span id="content-address-kana" class="small"></span>
-                </div>
-            </div>
-            <div style="line-height: 10mm;" class="keyvaluepair solid-border">
-                <div class="label"><span class="small">現住所</span></div>
-                <div class="content">
-                    <div><span class="small">〒 </span><span id="content-address-post" class="small"></span>
-                    </div>
-                    <div><span id="content-address-kanji" class="middle"></span></div>
-                </div>
-            </div>
-        </div>
-        <div id="sns" class="infoblock">
-            <div style="grid-row: 1;grid-column: 1; " class="keyvaluepair dashed-border">
-                <div class="label">
-                    <i class="fas fa-envelope"></i>
-                    <span class="small">Email</span>
-                </div>
-                <div class="content">
-                    <span class="small">
-                        <code id="content-email"></code>
-                    </span>
-                </div>
-            </div>
-            <div style="grid-row: 1;grid-column: 2;" class="keyvaluepair dashed-border">
-                <div class="label">
-                    <i class="fas fa-phone"></i>
-                    <span class="small">携帯電話</span>
-                </div>
-                <div class="content">
-                    <span class="small">
-                        <code id="content-phone"></code>
-                    </span>
-                </div>
-            </div>
-            <div style="grid-row: 2;grid-column: 1;" class="keyvaluepair">
-                <div class="label">
-                    <i class="fab fa-github"></i>
-                    <span class="small">GitHub</span>
-                </div>
-                <div class="content"><span class="small">
-                        <a id="content-github" href="" target="_blank">
-                            <code>@</code><code id="content-github-id"></code>
-                        </a>
-                    </span></div>
-            </div>
-            <div style="grid-row: 2;grid-column: 2;" class="keyvaluepair">
-                <div class="label">
-                    <i class="fab fa-twitter"></i>
-                    <span class="small">Twitter</span>
-                </div>
-                <div class="content">
-                    <span class="small">
-                        <a id="content-twitter" href="" target="_blank">
-                            <code>@</code><code id="content-twitter-id"></code>
-                        </a>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="history" class="section">
-        <template id="history-row-template">
+        <div id="history" class="section" style="border: var(--bold-line);">
             <div class="history-row">
-                <div class="history-row-year"><span class="middle"></span></div>
-                <div class="history-row-month"><span class="middle"></span></div>
-                <div class="history-row-content"><span class="middle"></span></div>
+                <div class="history-row-year"><span class="middle">年</span></div>
+                <div class="history-row-month"><span class="middle">月</span></div>
+                <div class="history-row-content" style="text-align: center;"><span class="middle">学歴・職歴</span></div>
             </div>
-        </template>
-    </div>
-    <script src="../data.js"></script>
-    <script src="./setvalue.js"></script>
-</body>
+            <template id="history-row-template">
+                <div class="history-row">
+                    <div class="history-row-year"><span class="middle"></span></div>
+                    <div class="history-row-month"><span class="middle"></span></div>
+                    <div class="history-row-content"><span class="middle"></span></div>
+                </div>
+            </template>
+        </div>
+        <!-- </div>
 
+    <div style="page-break-after: always;"></div>
+
+    <div class="page"> -->
+        <div id="advantage" class="section" style="height: 50mm; border: var(--bold-line); display: none;">
+            <div class="block">
+                <div class="lefttop-label"><span class="small">長所</span></div>
+                <div class="block-content">
+                    <p id="content-advantage" class="middle"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="misc" class="section"
+            style="min-height: 50mm; border: var(--bold-line);display: grid; grid-template-columns: auto 7cm;">
+            <div id="motivation" style="border-right: var(--bold-line);">
+                <div class="block">
+                    <div class="lefttop-label"><span class="small">志望理由</span></div>
+                    <div class="block-content">
+                        <p id="content-motivation" class="middle"></p>
+                    </div>
+                </div>
+            </div>
+            <div style="display: grid;grid-template-rows: auto auto auto;">
+                <div class="solid-border-bold">
+                    <div class="block">
+                        <div class="lefttop-label"><span class="small">通勤時間</span></div>
+                        <div class="centered-content">
+                            <span class="small">約</span>
+                            <span id="traveltime-hours">
+                                <span id="content-traveltime-hours" class="middle"></span>
+                                <span class="small">時間</span>
+                            </span>
+                            <span id="traveltime-minutes">
+                                <span id="content-traveltime-minutes" class="middle"></span>
+                                <span class="small">分</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="solid-border-bold">
+                    <div class="block">
+                        <div class="lefttop-label"><span class="small">扶養家族（配偶者を除く）</span></div>
+                        <div class="centered-content">
+                            <span id="content-dependents" class="middle"></span>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: grid;grid-template-columns: 1fr 1fr;">
+                    <div style="border-right: var(--bold-line);">
+                        <div class="block">
+                            <div class="lefttop-label"><span class="small">配偶者</span></div>
+                            <div class="centered-content">
+                                <span id="content-spouse" class="middle"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="block">
+                            <div class="lefttop-label"><span class="small">配偶者の扶養義務</span></div>
+                            <div class="centered-content">
+                                <span id="content-support-spouse" class="middle"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="other" class="section" style="min-height: 20mm; border: var(--bold-line);">
+            <div class="block">
+                <div class="lefttop-label"><span class="small">趣味・特技等</span></div>
+                <div class="block-content">
+                    <p id="content-other" class="middle"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="requests" class="section" style="height: 20mm; border: var(--bold-line);">
+            <div class="block">
+                <div class="lefttop-label"><span class="small">本人希望記入欄</span></div>
+                <div class="block-content">
+                    <p id="content-requests" class="middle"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const queries = {};
+        if (location.search.startsWith('?')) {
+            for (kv of location.search.slice(1).split('&')) {
+                const kv_list = kv.split('=');
+                queries[kv_list[0]] = kv_list[1];
+            }
+        }
+        if (queries['data']) {
+            const script = document.createElement('script');
+            script.setAttribute('src', queries['data']);
+            document.body.appendChild(script);
+        } else {
+            const script = document.createElement('script');
+            script.setAttribute('src', '../data.js');
+            document.body.appendChild(script);
+        }
+
+        const script = document.createElement('script');
+        script.setAttribute('src', './setvalue.js');
+        document.body.appendChild(script);
+    </script>
+</body>
 </html>

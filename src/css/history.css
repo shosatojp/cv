@@ -1,0 +1,32 @@
+@media print, screen {
+
+    #history > .history-row {
+        border-bottom: var(--line);
+    }
+    #history > .history-row:last-child {
+        border-bottom: none;
+    }
+
+    .history-row {
+        display: grid;
+        grid-template-columns: 20mm 10mm auto;
+        line-height: 8mm;
+        height: 8mm;
+    }
+
+    .history-row-year {
+        width: 100%;
+        text-align: center;
+        border-right: var(--line-dashed);
+    }
+    .history-row-month {
+        width: 100%;
+        text-align: center;
+        border-right: var(--line-dashed);
+    }
+
+    .history-row-content {
+        margin: 0 3mm 0 3mm;
+    }
+
+}

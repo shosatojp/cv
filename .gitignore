@@ -1,4 +1,6 @@
+node_modules/
 *.png
 *.jpg
-data.js
+*data.js
 *.pdf
+/dist/
