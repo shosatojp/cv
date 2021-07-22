@@ -9,3 +9,5 @@ chromeが必要です
 ```sh
 chrome --headless --print-to-pdf=resume.pdf src/template.html
 ```
+
+![](images/cv.png)
