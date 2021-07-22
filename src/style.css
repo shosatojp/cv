@@ -1,0 +1,159 @@
+
+:root{
+    --short: 7mm;
+    --tall: 21mm;
+    --line: black 0.5pt solid;
+    --line-dashed: black 0.5pt dashed;
+    --bold-line: black 1mm solid;
+}
+
+
+@media print, screen {
+    @page {
+        margin: 0;
+        size: 210mm 297mm;
+    }
+
+    body{
+        margin: 12.7mm;
+        max-width: 210mm;
+    }
+
+    *:visited,*:link {
+        text-decoration: none;
+        color: black;
+    }
+
+    p,span{
+        font-family: 'Times New Roman', 'Noto Serif CJK JP';
+    }
+
+    .dashed-border {
+        border-bottom: var(--line-dashed);
+    }
+
+    .solid-border {
+        border-bottom: var(--line);
+    }
+
+    .solid-border-right {
+        border-right: var(--line);
+    }
+
+    .label {
+        width: 20mm;
+        margin-left: 2mm;
+    }
+
+    .content {
+        text-align: left;
+        padding-left: 10mm;
+    }
+
+    .small {
+        font-size: 3mm;
+    }
+
+    .middle {
+        font-size: 4mm;
+    }
+
+    .large {
+        font-size: 6mm;
+    }
+
+    .infoblock:first-child {
+        border-top: var(--bold-line);
+    }
+    .infoblock:last-child {
+        border-bottom: var(--bold-line);
+    }
+
+    .infoblock {
+        width: 100%;
+        display: grid;
+        border: var(--bold-line);
+        border-top: none;
+        border-bottom: none;
+        box-sizing: border-box;
+    }
+
+    .keyvaluepair {
+        display: grid;
+        grid-template-columns: 20mm auto;
+    }
+    
+    .furigana {
+        line-height: var(--short);
+    }
+
+    .section {
+        margin-bottom: 2mm;
+    }
+
+    #name {
+        grid-template-rows: var(--short) 15mm;
+    }
+
+    #birthday-gender{
+        grid-template-rows: 10mm;
+        grid-template-columns: auto 40mm;
+        border-bottom: none;
+        line-height: 10mm;
+    }
+
+    #address {
+        grid-template-rows: var(--short) 21mm;
+    }
+
+    #sns {
+        grid-template-rows: var(--short) var(--short); 
+        grid-template-columns: auto auto;
+        line-height: var(--short);
+    }
+
+    #picture {
+        margin-top: -12mm;
+        text-align: center;
+        border-bottom: var(--bold-line);
+    }
+    #picture > img {
+        object-fit: cover;
+        width: 30mm;
+        height: 40mm;
+    }
+    
+    #history {
+        border: var(--bold-line);
+    }
+
+    #history > .history-row {
+        border-bottom: var(--line);
+    }
+    #history > .history-row:last-child {
+        border-bottom: none;
+    }
+
+    .history-row {
+        display: grid;
+        grid-template-columns: 20mm 10mm auto;
+        line-height: 8mm;
+        height: 8mm;
+    }
+
+    .history-row-year {
+        width: 100%;
+        text-align: center;
+        border-right: var(--line-dashed);
+    }
+    .history-row-month {
+        width: 100%;
+        text-align: center;
+        border-right: var(--line-dashed);
+    }
+    .history-row-content {
+        margin-left: 3mm;
+    }
+    
+
+}

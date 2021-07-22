@@ -1,0 +1,127 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+</head>
+
+<body>
+    <h2>履&emsp;歴&emsp;書</h2>
+    <div class="section">
+        <div style="display: grid; grid-template-columns: auto 40mm;">
+            <div>
+                <div id="name" class="infoblock">
+                    <div class="furigana keyvaluepair dashed-border">
+                        <div class="label"><span class="small">ふりがな</span></div>
+                        <div class="content"><span id="content-name-kana" class="small"></span></div>
+                    </div>
+                    <div style="line-height: 15mm;" class="keyvaluepair solid-border">
+                        <div class="label"><span class="small">氏名</span></div>
+                        <div class="content">
+                            <span id="content-name-kanji" class="large"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="birthday-gender" class="infoblock">
+                    <div id="birthday" class="keyvaluepair solid-border solid-border-right">
+                        <div class="label"><span class="small">生年月日</span></div>
+                        <div class="content">
+                            <span id="content-birthday-year" class="middle"></span>
+                            <span class="small">年</span>
+                            <span id="content-birthday-month" class="middle"></span>
+                            <span class="small">月</span>
+                            <span id="content-birthday-day" class="middle"></span>
+                            <span class="small">日</span>
+                            <span class="small">（満</span>
+                            <span id="content-age" class="middle"></span>
+                            <span class="small">歳）</span>
+                        </div>
+                    </div>
+                    <div id="gender" class="keyvaluepair solid-border">
+                        <div class="label"><span class="small">性別</span></div>
+                        <div class="content"><span id="content-gender" class="middle"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div id="picture"><img id="content-picture" src=""></div>
+        </div>
+
+        <div id="address" class="infoblock">
+            <div class="furigana keyvaluepair dashed-border">
+                <div class="label"><span class="small">ふりがな</span></div>
+                <div class="content"><span id="content-address-kana" class="small"></span>
+                </div>
+            </div>
+            <div style="line-height: 10mm;" class="keyvaluepair solid-border">
+                <div class="label"><span class="small">現住所</span></div>
+                <div class="content">
+                    <div><span class="small">〒 </span><span id="content-address-post" class="small"></span>
+                    </div>
+                    <div><span id="content-address-kanji" class="middle"></span></div>
+                </div>
+            </div>
+        </div>
+        <div id="sns" class="infoblock">
+            <div style="grid-row: 1;grid-column: 1; " class="keyvaluepair dashed-border">
+                <div class="label">
+                    <i class="fas fa-envelope"></i>
+                    <span class="small">Email</span>
+                </div>
+                <div class="content">
+                    <span class="small">
+                        <code id="content-email"></code>
+                    </span>
+                </div>
+            </div>
+            <div style="grid-row: 1;grid-column: 2;" class="keyvaluepair dashed-border">
+                <div class="label">
+                    <i class="fas fa-phone"></i>
+                    <span class="small">携帯電話</span>
+                </div>
+                <div class="content">
+                    <span class="small">
+                        <code id="content-phone"></code>
+                    </span>
+                </div>
+            </div>
+            <div style="grid-row: 2;grid-column: 1;" class="keyvaluepair">
+                <div class="label">
+                    <i class="fab fa-github"></i>
+                    <span class="small">GitHub</span>
+                </div>
+                <div class="content"><span class="small">
+                        <a id="content-github" href="" target="_blank">
+                            <code>@</code><code id="content-github-id"></code>
+                        </a>
+                    </span></div>
+            </div>
+            <div style="grid-row: 2;grid-column: 2;" class="keyvaluepair">
+                <div class="label">
+                    <i class="fab fa-twitter"></i>
+                    <span class="small">Twitter</span>
+                </div>
+                <div class="content">
+                    <span class="small">
+                        <a id="content-twitter" href="" target="_blank">
+                            <code>@</code><code id="content-twitter-id"></code>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="history" class="section">
+        <template id="history-row-template">
+            <div class="history-row">
+                <div class="history-row-year"><span class="middle"></span></div>
+                <div class="history-row-month"><span class="middle"></span></div>
+                <div class="history-row-content"><span class="middle"></span></div>
+            </div>
+        </template>
+    </div>
+    <script src="../data.js"></script>
+    <script src="./setvalue.js"></script>
+</body>
+
+</html>
